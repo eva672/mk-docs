@@ -1,17 +1,18 @@
 # Project information
 site_name: My MkDocs Project
 site_description: 'An example MkDocs project using the Material theme'
-site_url: 'https://eva672.github.io/mk-docs'  # Change this to your site's URL
+site_url: 'https://onelrian.github.io/mk-docs'  # Change this to your site's URL
 
 # Theme settings
 theme:
-  name: material
+  name: bootstrap
 
 # Navbar settings (site structure)
 nav:
   - Home: index.md
   - About: about.md
-
+  - multipass: multipass.md
+  
 # Extra settings
 markdown_extensions:
   - admonition
@@ -20,6 +21,6 @@ markdown_extensions:
       permalink: true
 
 # Repository configuration (for the edit link on pages)
-repo_name: eva672/mk-docs
-repo_url: https://github.com/eva672/mk-docs
+repo_name: onelrian/mk-docs
+repo_url: https://github.com/onelrian/mk-docs
 edit_uri: edit/master/docs/
