@@ -1,19 +1,19 @@
-#FROM nginx AS builder
+FROM nginx AS builder
 
-#WORKDIR /app
+WORKDIR /app
 
-#RUN apt update 
+RUN apt update 
 
-#RUN apt install mkdocs -y && \
- #   apt install mkdocs-bootstrap -y  
+RUN apt install mkdocs -y && \
+    apt install mkdocs-bootstrap -y  
 
-#COPY . .
-#
-#RUN mkdocs build
+COPY . .
 
-#FROM nginx:alpine
+RUN mkdocs build
 
-#COPY --from=builder /app/site /usr/share/nginx/html
+FROM nginx:alpine
+
+COPY --from=builder /app/site /usr/share/nginx/html
 
 #FROM python:3.9-slim
 
@@ -31,10 +31,10 @@
 #CMD ["mkdocs", "serve", "-a", "0.0.0.0:8000"]
 
 
-FROM python:3.9-slim
+#FROM python:3.9-slim
 
-COPY requirements.txt .
+#COPY requirements.txt .
 
-RUN pip install --upgrade --no-cache-dir -r requirements.txt
+#RUN pip install --upgrade --no-cache-dir -r requirements.txt
 
-COPY . .
+#COPY . .
